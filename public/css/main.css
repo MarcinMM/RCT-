@@ -1,0 +1,8 @@
+.generic {
+    width: 550px;
+    border: 2px solid fuchsia;
+    //background: black;
+    //color: white;
+    font-weight: bold;
+    font-size: 120%;
+}
