@@ -20,3 +20,15 @@ You can run the app locally using Sinatra:
 
     $ ruby wut.rb
     == Sinatra/0.9.4 has taken the stage on 4567 for development with backup from Mongrel
+
+## Alternate usage
+
+You should probably install shotgun and rack now that I've added a rack file (config.ru).
+
+	sudo gem install shotgun rack
+
+Then you can run the app with:
+
+	$ shotgun wut.rb
+
+And reload the page to view code changes without having to restart Sinatra.
