@@ -1,9 +1,16 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
+require 'datamapper'
+
+DataMapper.setup(:default, 'mysql://localhost/rctdash')
 
 get '/' do
-	haml :widget
+    haml :blog
+end
+
+get '/game' do
+	haml :widget, :layout => :game
 end
 
 get '/:name' do

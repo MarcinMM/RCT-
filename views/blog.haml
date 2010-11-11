@@ -1,0 +1,10 @@
+#main
+	Blog HAML!
+	#container.generic
+		Here we are in a blog, maybe.
+		%form{:id => "blogForm", :method => "POST"}
+			%input{:type => "text", :id => "blogTitle"}
+			<br>
+			%textarea{:id => "blogInput"}
+			<br>
+			%input{:type => "button", :value => "Submit or defy!", :id => "submit"}
