@@ -47,7 +47,7 @@ define(function () {
                         _this.left();
                     }
                     if (key == 32) {
-                        console.log('pew pew');
+                        //console.log('pew pew');
                     }
                 }
             });
@@ -157,28 +157,28 @@ define(function () {
                             if (!deltaVFlag && (yDiff >= -8 && yDiff <= -6) && (this.dirY > 0)) {
                                 this.dirY = -this.dirY;
                                 deltaVFlag = 1;
-                                console.log('top');
+                                //console.log('top');
                                 brick.remove();
                             }
                             // impact on bottom +1px; only change speed downwards
                             if (!deltaVFlag && (yDiff >= 16 && yDiff <= 18) && (this.dirY < 0)) {
                                 this.dirY = -this.dirY;
                                 deltaVFlag = 1;
-                                console.log('bottom');
+                                //console.log('bottom');
                                 brick.remove();
                             }
                             // impact on left; only change speed to the right
                             if (!deltaVFlag && (xDiff == -7) && (this.dirX > 0)) {
                                 this.dirX = -this.dirX;
                                 deltaVFlag = 1;
-                                console.log('left');
+                                //console.log('left');
                                 brick.remove();
                             }
                             // impact on right; only change speed left
                             if (!deltaVFlag && (xDiff == 27) && (this.dirX < 0)) {
                                 this.dirX = -this.dirX;
                                 deltaVFlag = 1;
-                                console.log('right');
+                                //console.log('right');
                                 brick.remove();
                             }
                         }
@@ -194,7 +194,7 @@ define(function () {
             $.doTimeout('loopId', 1, function() {
                 _this.draw();
                 if (_this.stop == 1) {
-                    console.log('stop');
+                    //console.log('stop');
                     return false;
                 }
                 return true;

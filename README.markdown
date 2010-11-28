@@ -27,7 +27,11 @@ You should probably install shotgun and rack now that I've added a rack file (co
 
 	sudo gem install shotgun rack
 
-Then you can run the app with:
+Then you can run the app (on OSX) with:
+
+	$ shotgun -p 4567 -s thin -o 0.0.0.0 wut.rb
+
+or maybe just this will work for you:
 
 	$ shotgun wut.rb
 
