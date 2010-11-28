@@ -3,7 +3,16 @@ require 'sinatra'
 require 'haml'
 require 'datamapper'
 
-DataMapper.setup(:default, 'mysql://localhost/rctdash')
+#require 'models'
+#require 'helpers'
+
+DataMapper.setup(:default, {
+  :adapter => 'mysql',
+  :database => 'rctdash',
+  :username => 'rct',
+  :password => 'rct',
+  :host => 'localhost'
+})
 
 get '/' do
     haml :blog
@@ -14,5 +23,5 @@ get '/game' do
 end
 
 get '/:name' do
-	"Let's get some includes and databases up in here, wot wot. Oh yes and #{params[:name]}."
+	"Let's get some includes and databases up in here, wot wot wot. Oh yes and #{params[:name]}."
 end
