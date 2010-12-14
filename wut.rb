@@ -2,19 +2,13 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'datamapper'
+require 'dm-core'
 
-#require 'models'
+require 'models'
 #require 'helpers'
 
-DataMapper.setup(:default, {
-  :adapter => 'mysql',
-  :database => 'rctdash',
-  :username => 'rct',
-  :password => 'rct',
-  :host => 'localhost'
-})
-
 get '/' do
+	@posts = Post.all(:order => [:id.desc], :limit => 20)
     haml :blog
 end
 
@@ -24,4 +18,9 @@ end
 
 get '/:name' do
 	"Let's get some includes and databases up in here, wot wot wot. Oh yes and #{params[:name]}."
+end
+
+post '/' do
+	newPost = Post.create(:title => params[:blogTitle], :content => params[:blogInput])
+	newPost.save
 end

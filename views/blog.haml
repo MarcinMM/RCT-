@@ -7,4 +7,12 @@
 			<br>
 			%textarea{:id => "blogInput"}
 			<br>
-			%input{:type => "button", :value => "Submit or defy!", :id => "submit"}
+			%input{:type => "submit", :value => "Submit or defy!", :id => "submit"}
+			
+		%h1 Well um ...
+		- if @posts
+			%p Got posts
+			- @posts.each do |post|
+				%h1 Got a thing here
+				%h2= post.title
+				%p= post.content
