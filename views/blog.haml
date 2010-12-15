@@ -3,16 +3,18 @@
 	#container.generic
 		Here we are in a blog, maybe.
 		%form{:id => "blogForm", :method => "POST"}
-			%input{:type => "text", :id => "blogTitle"}
+			%input{:type => "text", :id => "blogTitle", :name => "blogTitle" }
 			<br>
-			%textarea{:id => "blogInput"}
+			%textarea{:id => "blogInput", :name => "blogInput" }
 			<br>
 			%input{:type => "submit", :value => "Submit or defy!", :id => "submit"}
 			
 		%h1 Well um ...
+		%div 
+			Title goes here
+			&= @title
 		- if @posts
 			%p Got posts
 			- @posts.each do |post|
-				%h1 Got a thing here
-				%h2= post.title
-				%p= post.content
+				%h2&= post.title
+				%p&= post.content

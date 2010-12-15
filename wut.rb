@@ -21,6 +21,5 @@ get '/:name' do
 end
 
 post '/' do
-	newPost = Post.create(:title => params[:blogTitle], :content => params[:blogInput])
-	newPost.save
+	newPost = Post.create(:title => params['blogTitle'], :content => params['blogInput'])
 end
