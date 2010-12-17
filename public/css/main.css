@@ -10,3 +10,15 @@
 #restartButton {
     display: none;
 }
+
+#left {
+	width: 200px;
+}
+#main {
+	margin-left: 200px;
+	margin-right: 200px;
+}
+#right {
+	width: 200px;
+	float: right;
+}
