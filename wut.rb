@@ -9,6 +9,8 @@ require 'models'
 
 get '/' do
 	@posts = Post.all(:order => [:id.desc], :limit => 20)
+	# TODO
+	# @page = Page.get(:id => params['pageId'])
     haml :blog
 end
 
