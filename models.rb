@@ -1,5 +1,6 @@
 require 'datamapper'
 require 'dm-core'
+require 'dm-migrations'
 
 DataMapper::Logger.new($stdout, :debug)
 
@@ -32,8 +33,11 @@ class Tag
    belongs_to :post
 end
 
+
 # Basic unit of a site
 class Page
+  include DataMapper::Resource
+  
   property :id, Serial
   property :canonical, Text
   
@@ -50,28 +54,33 @@ class Layout
   property :id, Serial
   property :name, Text
   
-  has n, :modules
+  has n, :boxs
+  belongs_to :page
 end
-  
+
 # This is a unit of layout, containing positional data and nothing else
 # It is function agnostic and calls the type function when activated by layout manager
-class Module
+class Box
   include DataMapper::Resource
   
   property :id, Serial
   property :location, Text
   property :order, Integer
   
-  has 1, :moduletypes
+  has 1, :box_type
+  belongs_to :layout
 end
 
 # This is a unit of function, containing further instructions to the app on how to interact with the site
 # It is layout-agnostic, and simply executes by id when called
-class ModuleType
+class BoxType
   include DataMapper::Resource
   
   property :id, Serial
   property :type, Text
   
-  belongs_to :module
+  belongs_to :box
 end
+
+
+DataMapper.auto_migrate!
