@@ -1,12 +1,13 @@
 -# I'm thinking we should have a ruby .each for each column type thing
 -# But maybe first we can just assume 3 column variable layout with modules just like d.net?
-#left
+#left.boxenColumn
 	Some stuff.
-#right
+	%div.boxen
+#right.boxenColumn
 	Some other stuff.
 #main
 	Blog HAML!
-	#container.generic
+	#container.generic.boxenColumn
 		Here we are in a blog, maybe.
 		%form{:id => "blogForm", :method => "POST"}
 			%input{:type => "text", :id => "blogTitle", :name => "blogTitle" }

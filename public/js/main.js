@@ -3,7 +3,8 @@ require([
             "js/doTimeout.js",
             "js/underscore-dev.js",
             "js/backbone-dev.js",
-            "js/jquery-form.js"
+            "js/jquery-form.js",
+            "js/jquery-ui-1.8.8.custom.min.js"
         ],
         function() {
             // blog "class"
@@ -38,6 +39,8 @@ require([
             
             var blog = new Blog( { blogTest2: 'inited var' });
             blog.addEntry();
+
+            $('.boxenColumn').sortable({ connectWith: '.boxenColumn', forcePlaceholderSize: true, placeholder: 'ui-drag-outline' });
             //alert(blog.blogTest);
             //alert(blog.get('blogTest2'));
             

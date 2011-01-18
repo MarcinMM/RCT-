@@ -82,5 +82,5 @@ class BoxType
   belongs_to :box
 end
 
-
-DataMapper.auto_migrate!
+# This has to be commented out for "production"
+# DataMapper.auto_migrate!

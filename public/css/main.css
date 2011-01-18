@@ -22,3 +22,13 @@
 	width: 200px;
 	float: right;
 }
+
+.boxen {
+    width: 100px;
+    height: 100px;
+    border: 2px solid fuchsia;
+}
+
+.ui-drag-outline {
+    border: 2px dashed grey;
+}

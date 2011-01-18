@@ -19,7 +19,7 @@ get '/game' do
 end
 
 get '/:name' do
-	"Let's get some includes and databases up in here, wot wot wot. Oh yes and #{params[:name]}."
+	"Let's get some includes and databases up in here, wot wot wot."
 end
 
 post '/' do
